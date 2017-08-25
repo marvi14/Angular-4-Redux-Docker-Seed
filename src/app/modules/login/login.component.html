@@ -1,0 +1,75 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">{{'LOGIN_TITLE' | translate}}</a>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page login-page" filter-color="black" data-image="../../../assets/img/login.jpg">
+        <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <div class="card card-login card-hidden">
+                            <div class="card-header text-center" data-background-color="blue">
+                                <h4 class="card-title">Login</h4>
+                                <div class="social-line">
+                                    <img id="auth0-login-btn" (click)="auth0Login()" src="../assets/img/auth0.png" style="width: 20%;cursor: pointer;" />
+                                </div>
+                            </div>
+                            <p class="category text-center">
+                                {{'LOGIN_OR_JUST' | translate}}
+                            </p>
+                            <form id="login-form" name="login-form" smart-validate-form>
+                                <div class="card-content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">{{'LOGIN_USERNAME' | translate}}</label>
+                                            <input type="text" id="login-username" name="login-username" class="form-control" [(ngModel)]="credentials.email" smart-validate-input
+                                                required/>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">{{'LOGIN_NAME' | translate}}</label>
+                                            <input type="text" id="login-workspace" name="login-workspace" class="form-control" [(ngModel)]="credentials.name" smart-validate-input
+                                                required/>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">{{'LOGIN_PASSWORD' | translate}}</label>
+                                            <input type="password" id="login-password" name="login-password" class="form-control" [(ngModel)]="credentials.password"
+                                                smart-validate-input required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer text-center">
+                                    <button id="login-pm-button" type="button" (click)="pmLogin()" class="btn btn-info btn-simple btn-wd btn-lg">{{'LOGIN_BUTTON' | translate}}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer-cmp></footer-cmp>
+    </div>
+</div>

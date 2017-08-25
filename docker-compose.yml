@@ -1,0 +1,10 @@
+#docker-compose.yml
+version: '2.0'
+
+services:
+    frontend:
+        build: .
+        ports:
+            - "4200:4200"
+        volumes:
+            - .:/usr/src/app/
